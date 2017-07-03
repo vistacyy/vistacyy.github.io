@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>demo</title>
+<script type="text/javascript" src="tool.js"></script>
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript" src="base.js"></script>
+<script type="text/javascript" src="base_serialize.js"></script>
+<style type="text/css">
+	dd{
+		list-style-type:none;
+	}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+
+function msgBlur(_this,name){
+  	var info='#reg .info_'+name;
+  	var error='#reg .error_'+name;
+  	var succ='#reg .succ_'+name;
+  	alert(_this.value);
+}
+
+
+  
+  
+
+$('form').eq(0).form('user').bind('blur',function(){msgBlur(this,'user')});
+
+
+
+
+function check_user() {
+	var flag = true;
+	if (!/[\w]{2,20}/.test(trim($('form').eq(0).form('user').value()))) {
+		flag=false;
+	} 
+	return flag
+}
+
+
+  
+};    
+</script>
+</head>
+<body>
+
+
+<div id='reg'>
+	<form name="reg">
+	<dl>
+	  	<dd>用 户 名： <input type="text" name="user" class="text" /></dd>
+	  	<dd>密　　码： <input type="password" name="pass" class="text" /></dd>
+	  	<dd>提　　问： <select name="ques"  class="text">
+	  				<option value="0">- - - - 请选择 - - - -</option>
+	  				<option value="1">- - 您最喜欢吃的菜</option>
+	  				<option value="2">- - 您的狗狗的名字</option>
+	  				<option value="3">- - 您的出生地</option>
+	  				<option value="4">- - 您最喜欢的明星</option>
+				</select></dd>
+	  	<dd>回　　答： <input type="text" name="ans" class="text" /></dd>
+	  	<dd>电子邮件： <input type="text" name="email" class="text" autocomplete="off" /></dd>
+	  	<dd>备　　注： <textarea name="ps"  class="text" ></textarea></dd>
+	  	<dd><input type="button" name="sub" value="提交" class="text" /></dd>
+	  </dl>
+	</form>
+</div>
+
+
+</body>
+</html>
+<!--
+
+
+
+
+
+
+ -->
